@@ -1,3 +1,4 @@
 *
 !public/
 !.gitignore
+!Table_Input.csv

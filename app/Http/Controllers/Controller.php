@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
-use App\Models\Test;
+use App\Models\test;
 
 
 class Controller extends BaseController
@@ -13,7 +13,7 @@ class Controller extends BaseController
     use AuthorizesRequests, ValidatesRequests;
 
     public function DisplayTable(){
-        $result = Test::all();
+        $result = test::all();
 
         foreach($result as $data){
             if($data->index == 'A5'){
@@ -44,6 +44,7 @@ class Controller extends BaseController
         $beta = $A15 / $A7;
         $charlie = $A13 * $A12;
 
+        $calculation = [];
         $calculation = [
 
             (object) [
@@ -63,7 +64,7 @@ class Controller extends BaseController
             ]
 
         ];
-
+                
         return view ('welcome' , compact('result' , 'calculation'));
     }
 }

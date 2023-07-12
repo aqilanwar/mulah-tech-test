@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Test;
+use App\Models\test;
 
 class DatabaseSeeder extends Seeder
 {
@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
         }
         //Save the detail from csv to database
         foreach($result as $res){
-            $test = new Test;
+            $test = new test;
             $test->index = $res->index;
             $test->value = $res->value;
             $test->save();
